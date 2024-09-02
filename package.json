@@ -1,6 +1,6 @@
 {
   "name": "network-vis-plugin",
-  "version": "0.21.2",
+  "version": "0.22.0-rc.2",
   "description": "Network plugin for visualizing networks",
   "authors": [
     "David Moreno Lumbreras <dmorenolumb@gmail.com>",
