@@ -413,8 +413,8 @@ export const NetworkVis = ({ vis, visData, visParams}) => {
   
           let value = bucket[nodeSizeId];
   
-          if (vis.params.maxCutMetricSizeNode) {
-            value = Math.min(vis.params.maxCutMetricSizeNode, value);
+          if (visParams.maxCutMetricSizeNode) {
+            value = Math.min(visParams.maxCutMetricSizeNode, value);
           }
   
           // Don't show nodes under the value
@@ -433,8 +433,8 @@ export const NetworkVis = ({ vis, visData, visParams}) => {
           if (edgeSizeId) {
             sizeEdgeVal = bucket[edgeSizeId];
   
-            if (vis.params.maxCutMetricSizeEdge) {
-              sizeEdgeVal = Math.min(vis.params.maxCutMetricSizeEdge, sizeEdgeVal);
+            if (visParams.maxCutMetricSizeEdge) {
+              sizeEdgeVal = Math.min(visParams.maxCutMetricSizeEdge, sizeEdgeVal);
             }
           }
   
