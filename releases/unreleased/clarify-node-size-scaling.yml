@@ -1,0 +1,10 @@
+---
+title: Clarify node size scaling
+category: added
+author: Eva Millán <evamillan@bitergia.com>
+issue: 12
+notes: >
+  The `ellipse`, `circle`, `database` and `box` node
+  shapes don't scale according to the number of documents.
+  Instead, its size is based on the size of the label text.
+  A text below these options now warns about this.
