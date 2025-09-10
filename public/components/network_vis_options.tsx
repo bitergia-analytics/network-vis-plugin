@@ -27,7 +27,7 @@
  * under the License.
  */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import { i18n } from '@osd/i18n';
 import { FormattedMessage } from '@osd/i18n/react';
 import {
@@ -35,8 +35,10 @@ import {
   EuiSpacer,
   EuiTitle,
   EuiSelect,
+  EuiSuperSelect,
   EuiFormRow,
   EuiColorPicker,
+  EuiText
 } from '@elastic/eui';
 
 import { VisOptionsProps } from '../../../../src/plugins/vis_default_editor/public';
@@ -76,17 +78,61 @@ function NetworkOptions({
   setValue,
 }: VisOptionsProps<NetworkVisParams>) {
   const shapeOptions = [
-    { value: 'circle', text: 'Circle' },
-    { value: 'dot', text: 'Dot' },
-    { value: 'ellipse', text: 'Ellipse' },
-    { value: 'database', text: 'Database' },
-    { value: 'box', text: 'Box' },
-    { value: 'text', text: 'Text only' },
-    { value: 'diamond', text: 'Diamond' },
-    { value: 'star', text: 'Star' },
-    { value: 'triangle', text: 'Triangle' },
-    { value: 'triangleDown', text: 'Triangle down' },
-    { value: 'square', text: 'Square' }
+    { value: 'dot', inputDisplay: 'Dot' },
+    { value: 'text', inputDisplay: 'Text only' },
+    { value: 'diamond', inputDisplay: 'Diamond' },
+    { value: 'star', inputDisplay: 'Star' },
+    { value: 'triangle', inputDisplay: 'Triangle' },
+    { value: 'triangleDown', inputDisplay: 'Triangle down' },
+    { value: 'square', inputDisplay: 'Square' },
+    {
+      value: 'circle',
+      inputDisplay: 'Circle',
+      dropdownDisplay: (
+        <Fragment>
+        <span>Circle</span>
+        <EuiText size="s" color="subdued">
+          Node size is based on the size of the label text
+        </EuiText>
+      </Fragment>
+      ),
+     },
+    {
+      value: 'ellipse',
+      inputDisplay: 'Ellipse',
+      dropdownDisplay: (
+        <Fragment>
+        <span>Ellipse</span>
+        <EuiText size="s" color="subdued">
+          Node size is based on the size of the label text
+        </EuiText>
+      </Fragment>
+      )
+    },
+    {
+      value: 'database',
+      inputDisplay: 'Database',
+      dropdownDisplay: (
+        <Fragment>
+        <span>Database</span>
+        <EuiText size="s" color="subdued">
+          Node size is based on the size of the label text
+        </EuiText>
+      </Fragment>
+      )
+    },
+    {
+      value: 'box',
+      inputDisplay: 'Box',
+      dropdownDisplay: (
+        <Fragment>
+        <span>Box</span>
+        <EuiText size="s" color="subdued">
+          Node size is based on the size of the label text
+        </EuiText>
+      </Fragment>
+      )
+    },
   ];
   const arrowPositionOptions = [
     { value: 'from', text: 'Beginning' },
@@ -221,22 +267,24 @@ function NetworkOptions({
         </EuiTitle>
         
         <EuiFormRow label="Shape of first node" fullWidth display="columnCompressed">
-          <EuiSelect
+          <EuiSuperSelect
+            hasDividers
             fullWidth
             compressed={true}
             options={shapeOptions}
-            value={stateParams.shapeFirstNode}
-            onChange={(e) => setValue('shapeFirstNode', e.target.value)}
+            valueOfSelected={stateParams.shapeFirstNode}
+            onChange={(e) => setValue('shapeFirstNode', e)}
           />
         </EuiFormRow>
         
         <EuiFormRow label="Shape of second node" fullWidth display="columnCompressed">
-          <EuiSelect
+          <EuiSuperSelect
+            hasDividers
             fullWidth
             compressed={true}
             options={shapeOptions}
-            value={stateParams.shapeSecondNode}
-            onChange={(e) => setValue('shapeSecondNode', e.target.value)}
+            valueOfSelected={stateParams.shapeSecondNode}
+            onChange={(e) => setValue('shapeSecondNode', e)}
           />
         </EuiFormRow>
         
