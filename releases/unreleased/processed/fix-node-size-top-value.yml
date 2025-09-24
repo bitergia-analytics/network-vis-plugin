@@ -1,8 +1,0 @@
----
-title: Apply node size top value
-category: fixed
-author: Eva Millán <evamillan@bitergia.com>
-issue: 12
-notes: >
-  The node size top value setting was not being
-  applied to the node-relation visualizations properly. 
