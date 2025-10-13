@@ -1,8 +1,0 @@
----
-title: Disabled visualization in dashboard
-category: fixed
-author: Eva Millán <evamillan@bitergia.com>
-issue: 15
-notes: >
-  The network visualization no longer appears disabled
-  when it is embedded in a dashboard.

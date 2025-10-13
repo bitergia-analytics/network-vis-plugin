@@ -1,5 +1,14 @@
 # Releases
 
+## network-vis-plugin 0.34.0 - (2025-10-13)
+
+**Bug fixes:**
+
+ * Disabled visualization in dashboard (#15)\
+   The network visualization no longer appears disabled when it is
+   embedded in a dashboard.
+
+
 ## network-vis-plugin 0.33.0 - (2025-09-24)
 
 **New features:**
